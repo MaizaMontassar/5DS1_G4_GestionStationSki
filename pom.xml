@@ -69,7 +69,10 @@
 					</excludes>
 				</configuration>
 			</plugin>
+
 		</plugins>
+
+
 	</build>
 
 </project>
