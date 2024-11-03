@@ -2,6 +2,8 @@ package tn.esprit.spring.services;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import tn.esprit.spring.dto.PisteDTO;
+import tn.esprit.spring.entities.Color;
 import tn.esprit.spring.entities.Piste;
 import tn.esprit.spring.repositories.IPisteRepository;
 
@@ -18,7 +20,15 @@ public class PisteServicesImpl implements  IPisteServices{
     }
 
     @Override
-    public Piste addPiste(Piste piste) {
+    public Piste addPiste(PisteDTO pisteDTO) {
+        // Convert DTO to entity
+        Piste piste = new Piste();
+        piste.setNamePiste(pisteDTO.getNamePiste());
+        piste.setColor(Color.valueOf(pisteDTO.getColor().toUpperCase()));
+        piste.setLength(pisteDTO.getLength());
+        piste.setSlope(pisteDTO.getSlope());
+
+        // Save entity to the repository
         return pisteRepository.save(piste);
     }
 
