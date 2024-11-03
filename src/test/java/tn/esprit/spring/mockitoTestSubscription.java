@@ -42,7 +42,7 @@ class mockitoTestSubscription {
         subscription.setTypeSub(TypeSubscription.ANNUAL);
 
         when(subscriptionRepository.save(subscription)).thenReturn(subscription);
-
+   
 
         assertEquals(subscription.getEndDate(), subscription.getStartDate().plusYears(1));
         verify(subscriptionRepository, times(1)).save(subscription);
