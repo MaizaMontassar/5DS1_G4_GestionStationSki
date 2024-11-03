@@ -13,7 +13,6 @@ import tn.esprit.spring.services.SubscriptionServicesImpl;
 
 import java.time.LocalDate;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
@@ -44,7 +43,6 @@ class mockitoTestSubscription {
 
         when(subscriptionRepository.save(subscription)).thenReturn(subscription);
 
-        Subscription result = subscriptionServices.addSubscription(subscription);
 
         assertEquals(subscription.getEndDate(), subscription.getStartDate().plusYears(1));
         verify(subscriptionRepository, times(1)).save(subscription);
