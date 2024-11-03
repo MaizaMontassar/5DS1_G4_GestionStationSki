@@ -12,7 +12,7 @@ import java.util.Set;
 @AllArgsConstructor
 @Service
 public class SkierServicesImpl implements ISkierServices {
-
+///mmm
     private ISkierRepository skierRepository;
 
     private IPisteRepository pisteRepository;
