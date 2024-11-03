@@ -17,6 +17,7 @@ public class PisteServicesImpl implements  IPisteServices{
 
     @Override
     public List<Piste> retrieveAllPistes() {
+
         return pisteRepository.findAll();
     }
 
