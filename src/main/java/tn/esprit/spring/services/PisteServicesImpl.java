@@ -7,6 +7,7 @@ import tn.esprit.spring.entities.Color;
 import tn.esprit.spring.entities.Piste;
 import tn.esprit.spring.repositories.IPisteRepository;
 
+import javax.persistence.EntityNotFoundException;
 import java.util.List;
 @AllArgsConstructor
 @Service
@@ -39,6 +40,6 @@ public class PisteServicesImpl implements  IPisteServices{
 
     @Override
     public Piste retrievePiste(Long numPiste) {
-        return pisteRepository.findById(numPiste).orElse(null);
+        return pisteRepository.findById(numPiste).orElseThrow(() -> new EntityNotFoundException("Piste not found with ID: " + numPiste));
     }
 }
