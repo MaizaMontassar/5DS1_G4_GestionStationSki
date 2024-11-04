@@ -22,6 +22,15 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=stationSki
+  front-ski:
+    image: emnaafazaa/gr4_emna_gestionski_front
+    ports:
+      - "80:80"
+    networks:
+      - station
+    depends_on:
+      - spring-ski
+      - mysqldb
 
 networks:
   station:
