@@ -16,7 +16,7 @@ services:
   mysqldb:
     image: mysql:8
     volumes:
-      -  /home/mysql/emnadata:/var/lib/mysql:rw
+      -  /home/mysql/emnaadata:/var/lib/mysql:rw
     networks:
       - station
     environment:
